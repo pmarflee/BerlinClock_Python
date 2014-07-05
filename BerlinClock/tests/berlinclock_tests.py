@@ -67,5 +67,11 @@ class Test_FiveHourLine(unittest.TestCase):
 		line = FiveHourLine(23)
 		self.assertEqual('RRRR', str(line))
 
+class Test_BerlinClock(unittest.TestCase):
+
+	def test_should_return_correct_time_for_165000(self):
+		clock = BerlinClock('16:50:00')
+		self.assertEqual('Y\r\nRRRO\r\nROOO\r\nYYRYYRYYRYO\r\nOOOO', str(clock))
+
 if __name__ == '__main__':
 	unittest.main()
